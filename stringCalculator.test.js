@@ -18,4 +18,8 @@ describe("String Calculator", () => {
   test("returns sum of two numbers", () => {
     expect(calculator.add("1,2")).toBe(3);
   });
+
+  test("returns sum of multiple numbers", () => {
+    expect(calculator.add("1,2,3,4")).toBe(10);
+  });
 });
