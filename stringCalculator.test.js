@@ -14,4 +14,8 @@ describe("String Calculator", () => {
   test("returns number itself for single input", () => {
     expect(calculator.add("1")).toBe(1);
   });
+
+  test("returns sum of two numbers", () => {
+    expect(calculator.add("1,2")).toBe(3);
+  });
 });
