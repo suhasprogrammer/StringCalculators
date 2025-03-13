@@ -8,10 +8,15 @@ class StringCalculator {
       delimiter = new RegExp(parts[0].slice(2));
       numbers = parts[1];
     }
-    return numbers
-      .split(delimiter)
-      .map(Number)
-      .reduce((sum, num) => sum + num, 0);
+    const numArray = numbers.split(delimiter).map(Number);
+
+    // Check for negative numbers
+    const negatives = numArray.filter((num) => num < 0);
+    if (negatives.length > 0) {
+      throw new Error(`negative numbers not allowed ${negatives.join(", ")}`);
+    }
+
+    return numArray.reduce((sum, num) => sum + num, 0);
   }
 }
 
